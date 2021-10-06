@@ -1095,15 +1095,54 @@ Blockly.Blocks['loaddatafromopensensemap'] = {
   }
 };
 
-Blockly.Blocks['cleanupdata'] = {
+Blockly.Blocks['data_cleanup'] = {
   init: function() {
-    this.appendValueInput("NAME")
-        .setCheck("Array")
-        .appendField("Bereinige den Datensatz");
+    this.appendDummyInput()
+        .appendField("Bereinige Daten");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
- this.setTooltip("Bereinige die Daten");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['data_maximum'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Bestimme das Maximum der Daten");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['create_visual_representation'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Erstelle eine Visualisierung");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['filter_creation'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("erstelle Filter ")
+        .appendField(new Blockly.FieldTextInput("filter1"), "filterVar");
+    this.appendStatementInput("filtervalues")
+        .setCheck(null);
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
  this.setHelpUrl("");
   }
 };

@@ -135,8 +135,27 @@ Blockly.JavaScript['loaddatafromopensensemap'] = function(block) {
 //   var code = '...;\n';
 //   return code;
 // };
-Blockly.JavaScript['cleanupdata'] = function(block) {
-  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+Blockly.JavaScript['data_cleanup'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['data_maximum'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['create_visual_representation'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['filter_creation'] = function(block) {
+  var text_filtervar = block.getFieldValue('filterVar');
+  var statements_filtervalues = Blockly.JavaScript.statementToCode(block, 'filtervalues');
   // TODO: Assemble JavaScript into code variable.
   var code = '...;\n';
   return code;
