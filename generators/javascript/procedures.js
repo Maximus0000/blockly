@@ -111,3 +111,33 @@ Blockly.JavaScript['procedures_ifreturn'] = function(block) {
   code += '}\n';
   return code;
 };
+
+Blockly.JavaScript['loaddatafromopensensemap'] = function(block) {
+  var text_chosenurl = block.getFieldValue('chosenUrl');
+  var variable_chosenvar = Blockly.JavaScript.nameDB_.getName(block.getFieldValue('chosenVar'), Blockly.Variables.NAME_TYPE);
+  var splitArr = text_chosenurl.split("/")
+  var id = splitArr[splitArr.length-1]
+
+  var code = "getJSONfromOpenSense = async function(){\n\
+    let response = await fetch(\"https://api.opensensemap.org/boxes/"+(id)+"/sensors\")\n\
+    let readJSON = await response.json()\n\
+    return readJSON;\n\
+  }\n\
+  "+variable_chosenvar+" = await getJSONfromOpenSense();\n\
+  console.log("+variable_chosenvar+");\n\
+  "+variable_chosenvar+" = JSON.stringify("+variable_chosenvar+");\n"
+  
+  return code;
+};
+// Blockly.JavaScript['loaddatafromopensensemap'] = function(block) {
+//   var text_chosenurl = block.getFieldValue('chosenUrl');
+//   // TODO: Assemble JavaScript into code variable.
+//   var code = '...;\n';
+//   return code;
+// };
+Blockly.JavaScript['cleanupdata'] = function(block) {
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};

@@ -300,7 +300,8 @@ Blockly.JavaScript['text_print'] = function(block) {
   // Print statement.
   var msg = Blockly.JavaScript.valueToCode(block, 'TEXT',
       Blockly.JavaScript.ORDER_NONE) || '\'\'';
-  return "document.getElementById('output').innerText += "+msg+"+'\\n'"+";\n";
+      
+  return "console.log(\"bb\");\ndocument.getElementById('output').innerText += "+msg+"+'\\n'"+";\n";
   return 'window.alert(' + msg + ');\n';
 };
 

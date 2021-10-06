@@ -1078,3 +1078,32 @@ Blockly.Blocks['procedures_ifreturn'] = {
    */
   FUNCTION_TYPES: ['procedures_defnoreturn', 'procedures_defreturn']
 };
+
+Blockly.Blocks['loaddatafromopensensemap'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Lade Daten von ")
+        .appendField(new Blockly.FieldTextInput("URL"), "chosenUrl");
+    this.appendDummyInput()
+        .appendField("in Variable")
+        .appendField(new Blockly.FieldVariable("item"), "chosenVar");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("Lade Daten aus der Opensensemap");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['cleanupdata'] = {
+  init: function() {
+    this.appendValueInput("NAME")
+        .setCheck("Array")
+        .appendField("Bereinige den Datensatz");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("Bereinige die Daten");
+ this.setHelpUrl("");
+  }
+};
