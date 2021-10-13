@@ -10,16 +10,8 @@
  */
 'use strict';
 
-goog.provide('Blockly.Blocks.procedures');
-
-goog.require('Blockly');
-goog.require('Blockly.Blocks');
-goog.require('Blockly.Comment');
-goog.require('Blockly.FieldCheckbox');
-goog.require('Blockly.FieldLabel');
-goog.require('Blockly.FieldTextInput');
-goog.require('Blockly.Mutator');
-goog.require('Blockly.Warning');
+import * as Blockly from 'blockly';
+import FieldDate from '@blockly/field-date';
 
 
 Blockly.Blocks['procedures_defnoreturn'] = {
@@ -1136,8 +1128,11 @@ Blockly.Blocks['filter_creation'] = {
     this.appendDummyInput()
         .appendField("erstelle Filter ")
         .appendField(new Blockly.FieldTextInput("filter1"), "filterVar");
-    this.appendStatementInput("filtervalues")
-        .setCheck(null);
+    this.appendDummyInput()
+        .appendField("Zeitraum")
+        .appendField(new FieldDate("2020-02-20"), "FIELDNAME");
+    this.appendDummyInput()
+        .appendField("Sensor");
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
