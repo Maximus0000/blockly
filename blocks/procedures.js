@@ -10,8 +10,6 @@
  */
 'use strict';
 
-import * as Blockly from 'blockly';
-import FieldDate from '@blockly/field-date';
 
 
 Blockly.Blocks['procedures_defnoreturn'] = {
@@ -1069,75 +1067,4 @@ Blockly.Blocks['procedures_ifreturn'] = {
    * Blockly.Blocks['procedures_ifreturn'].FUNCTION_TYPES.push('custom_func');
    */
   FUNCTION_TYPES: ['procedures_defnoreturn', 'procedures_defreturn']
-};
-
-Blockly.Blocks['loaddatafromopensensemap'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Lade Daten von ")
-        .appendField(new Blockly.FieldTextInput("URL"), "chosenUrl");
-    this.appendDummyInput()
-        .appendField("in Variable")
-        .appendField(new Blockly.FieldVariable("item"), "chosenVar");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
- this.setTooltip("Lade Daten aus der Opensensemap");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['data_cleanup'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Bereinige Daten");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['data_maximum'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Bestimme das Maximum der Daten");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['create_visual_representation'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Erstelle eine Visualisierung");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['filter_creation'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("erstelle Filter ")
-        .appendField(new Blockly.FieldTextInput("filter1"), "filterVar");
-    this.appendDummyInput()
-        .appendField("Zeitraum")
-        .appendField(new FieldDate("2020-02-20"), "FIELDNAME");
-    this.appendDummyInput()
-        .appendField("Sensor");
-    this.setInputsInline(false);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
 };
